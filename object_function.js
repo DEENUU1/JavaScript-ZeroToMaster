@@ -5,7 +5,7 @@ function generateUser(name, email, city, job) {
       cityLive: city,
       work: job
     };
-  };
+  }
   
   let userInfo = generateUser("Kacper", "kacper@t.com", "Warsaw", "Programmer");
   console.log(userInfo);
