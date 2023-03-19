@@ -1,0 +1,21 @@
+
+
+<div id="content">
+<p>lorem ipsum</p>
+<p>lorem ipsum</p>
+<p>lorem ipsum</p>
+<p>lorem ipsum</p>
+<p>lorem ipsum</p>
+</div>
+
+<script>
+const pList = document.getElementsByTagName("p");
+
+for (i = 0; i < pList.length; i++) {
+    const p = pList[i];
+    p.classList.add("text-content");
+    p.innerHTML += " " + i;
+}
+
+const div = document.getElementById("content");
+div.style.background = "yellow";
