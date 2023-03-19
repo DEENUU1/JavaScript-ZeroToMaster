@@ -1,0 +1,26 @@
+<div>
+    <ul>
+        <li class="item"> lorem </li>
+        <li class="item"> lorem </li>
+        <li class="item"> lorem </li>
+        <li class="item"> lorem </li>
+    </ul>
+</div>
+
+<script>
+
+    const liList = document.querySelectorAll("ul li") 
+
+    for (let i = 0; i < liList.length; i++) {
+        const li = liList[i];
+        li.classList.remove("item");
+        li.classList.add("list-item");
+    }
+
+    const div = document.querySelector("div"); 
+    let newEl = document.createElement("h2");
+    newEl.innerHTML = "List of elements";
+    div.prepend(newEl);
+
+
+</script>
