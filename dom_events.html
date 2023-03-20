@@ -1,0 +1,22 @@
+<input type="text" placeholder="Napisz coś">
+    
+
+<script>
+
+    let inputValue = document.querySelector("input");
+    inputValue.onclick = function(event) {
+        console.log("element został kliknięty");
+    };
+
+    inputValue.oninput = function(event) {
+        console.log(event);
+    };
+
+    inputValue.onfocus = function(event) {
+        console.log("focus na input");
+    };
+
+    inputValue.onblur = function(event) {
+        console.log("blur na input");
+    };
+</script>
