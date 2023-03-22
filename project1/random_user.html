@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img id="avatar-img" src="" alt="">
+    <div id="full-name">fullname</div>
+    <div id="username">username</div>
+    <div id="user-details">
+        <div id="email">email</div>
+        <div id="country">country</div>
+    </div>
+    
+
+    <script>
+
+        const APIURL = 'https://randomuser.me/api'
+
+        window.onload = function() {
+            fetch(APIURL)
+            .then(response => response.json())
+            .then(data => dataReady(data))
+        }
+
+        function dataReady(data) {
+            console.log(data);
+            var result = data.results[0];
+            var fullname = result.name.title + " "
+                        + result.name.first + " "
+                        + result.name.last;
+            document.getElementById("full-name").innerHTML = fullname
+
+            var username = result.name.first;
+            document.getElementById("username").innerHTML = username
+
+            var email = result.email;
+            document.getElementById("email").innerHTML = email
+
+            var country = result.location.country;
+            document.getElementById("country").innerHTML = country
+
+            var image = result.picture.large; 
+            document.getElementById("avatar-img").src = image;
+        }
+        
+    </script>
+
+
+
+</body>
+</html>
