@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="script.js" defer></script> -->
+    <style>
+        .slider-container {
+            width: 800px;
+            height: 800px;
+        }
+        .comparison {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .base-image {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://assets.vg247.com/current/2015/03/de_dust2_cs_go.jpg");
+            background-size: cover;
+        }
+
+        .divisor {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-image: url("https://cs-site.ru/uploads/posts/2014-09/1410089679_de_dust21.jpg");
+            background-size: cover;
+        }
+
+        input[type=range] {
+            appearance: none;
+            -webkit-appearance: none;
+            position: absolute;
+            top: 50%;
+            width: calc(100% + 40px);
+            left: -20px;
+            background-color: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid white;
+            background: transparent;
+            border-radius: 50%;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider-container">
+        <div class="comparison">
+            <div class="base-image">
+                <div class="divisor"></div>
+            </div>
+            <input type="range" min="0" max="100" value="50" id="slider-range"
+                oninput="divisorChanged()" >
+        </div>
+    </div>
+    
+    <script>
+        let divisor = document.querySelector(".divisor");
+        let slider = document.getElementById("slider-range");
+
+        function divisorChanged() {
+            divisor.style.width = slider.value + "%";
+        }
+    </script>
+
+</body>
+</html>
